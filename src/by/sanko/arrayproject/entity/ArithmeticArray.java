@@ -1,5 +1,6 @@
 package by.sanko.arrayproject.entity;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.OptionalInt;
 
@@ -21,6 +22,13 @@ public class ArithmeticArray {
             array = new int[size];
         }else{
             array = new int[DEFAULT_SIZE];
+        }
+    }
+
+    public ArithmeticArray(ArrayList<Integer> arrayList) {
+        array = new int[arrayList.size()];
+        for(int i = 0; i < arrayList.size(); i++){
+            array[i] = arrayList.get(i);
         }
     }
 

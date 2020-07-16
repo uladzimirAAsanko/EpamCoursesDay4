@@ -5,6 +5,7 @@ import by.sanko.arrayproject.exception.ProjectException;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.OptionalInt;
 
 import static org.testng.Assert.assertEquals;
@@ -112,6 +113,30 @@ public class TestSearchingService {
             e.printStackTrace();
         }
         int expected = 6;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testFindPrimeNumbers() {
+        ArithmeticArray actual = new ArithmeticArray();
+        ArithmeticArray expected = new ArithmeticArray(new int[]{2, 3, 5});
+        try{
+            actual = searchingService.findPrimeNumbers(array);
+        }catch (ProjectException e){
+            e.printStackTrace();
+        }
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void testFibonacciNumbers() {
+        ArithmeticArray actual = new ArithmeticArray();
+        ArithmeticArray expected = new ArithmeticArray(new int[]{1,2, 3, 5});
+        try{
+            actual = searchingService.findFibonacciNumbers(array);
+        }catch (ProjectException e){
+            e.printStackTrace();
+        }
         assertEquals(actual, expected);
     }
 }
